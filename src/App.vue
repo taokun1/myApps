@@ -20,11 +20,13 @@ export default {
   },
   methods: {
     onChange(index) {
-      this.$notify({ type: "primary", message: index });
+      // this.$notify({ type: "primary", message: index });
       if (index == 0) {
           this.$router.push({path: '/home'})
       } else if (index == 1) {
-          this.$router.push({path: '/search'})
+          this.$router.push({path: '/pagesearch'})
+      } else if(index == 2) {
+          this.$router.push({path: '/friends'})
       } else {
           this.$router.push({path: '/login'})
       }

@@ -4,7 +4,8 @@ import { Dialog } from 'vant'
 import HelloWorld from '@/components/HelloWorld'
 import Login from '@/pages/login'
 import Home from '@/pages/home'
-import Search from '@/pages/search'
+import PageSearch from '@/pages/pageSearch'
+import Friends from '@/pages/friends'
 Vue.use(Router)
 const router = new Router({
   routes: [
@@ -31,12 +32,21 @@ const router = new Router({
       }
     },
     {
-      path: '/search',
-      name: 'search',
-      component: Search,
+      path: '/pagesearch',
+      name: 'pagesearch',
+      component: PageSearch,
       meta: {
         isLogin: true,
         title: '查询'
+      }
+    },
+    {
+      path: '/friends',
+      name: 'friend',
+      component: Friends,
+      meta: {
+        isLogin: true,
+        title: '朋友'
       }
     }
   ]

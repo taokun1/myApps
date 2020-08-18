@@ -1,15 +1,14 @@
 <template>
   <div id="home">
-    <van-nav-bar
+    <!-- <van-nav-bar
       title="主页"
-      left-text="返回"
       right-text="按钮"
       :fixed="isFixed"
       :placeholder="isPlaceHolder"
-      left-arrow
       @click-left="onClickLeft"
       @click-right="onClickRight"
-    />
+    /> -->
+    <new-header title="主页" :showLeft="false" :showRight="true" rightText="主页"></new-header>
     <header>
       <van-swipe :autoplay="3000">
         <van-swipe-item v-for="(image, index) in images" :key="index">
@@ -41,9 +40,12 @@
 <script>
 import Vue from "vue";
 import { Lazyload } from "vant";
-
+import NewHeader from '@/components/newHeader'
 Vue.use(Lazyload);
 export default {
+  components: {
+    NewHeader
+  },
   data() {
     return {
       images: [
